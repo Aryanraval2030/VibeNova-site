@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>VibeNova</title>
+    <style>
+        body {
+            font-family: Louis Vuitton Web, Louis Vuitton Web Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0px;
+            z-index: 999;
+            height: 15vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0px 1em;
+            background-color: rgba(252, 252, 252, 0.5);
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu_1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu_1 p,
+        i {
+            font-size: 1.2rem;
+        }
+
+        .hdr_name {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .contect p,
+        i {
+            font-size: 1.2rem;
+        }
+
+        #hdr_anc {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* section-1 */
+
+        #section-1 {
+            position: relative;
+            background-image: url(./cYtr9mOZauDYKdwGqYxQoJUK.jpg);
+            background-size: cover;
+            /* object-fit: contain; */
+            height: 95vh;
+            width: 100%;
+        }
+
+        .inr_1 {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        #sec_id {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-self: center;
+            font-weight: 500;
+            font-size: 1.5em;
+
+        }
+
+        #iconic_1 {
+            display: flex;
+            justify-self: center;
+            font-size: 2.5em;
+            font-weight: 900;
+        }
+
+        .shop {
+            border-bottom: 3px solid black;
+        }
+
+        /* section-2 */
+
+        .section-2 {
+            /* height: 100vh; */
+            width: 100%;
+            text-align: center;
+            padding: 0 1.7em;
+            margin-top: 40px;
+        }
+
+        .first_line {
+            font-size: 2em;
+            margin: 10px;
+            font-weight: 500;
+        }
+
+        .products_2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+
+        }
+
+        .box-pro-2 {
+            height: 60vh;
+        }
+
+        .box-pro-2 img {
+            height: 90%;
+        }
+
+        .box-pro-2 a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        /* section-3 */
+
+        .section-3 {
+            height: 100vh;
+            max-width: 100%;
+            margin-top: 40px;
+            background-image: url(./PUSH2_LV_SKI_V2_DI3.webp);
+            background-size: cover;
+        }
+
+        /* responsive */
+        @media (max-width:1280px) and (min-width:1024px) {
+            .hdr_name {
+                font-size: 2rem;
+            }
+
+            .contect i {
+                font-size:1.7rem;
+            }
+
+            .menu_1 i {
+                font-size: 1.7rem;
+            }
+
+            .box-pro-2 {
+                height: 380px;
+                max-width: 390px;
+            }
+            .contect-1
+            {
+                font-size: 1.5rem;
+            }
+            .menu_1 p{
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width:1024px) and (min-width:768px) {
+            .box-pro-2 {
+                height: 250px;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width:768px) and (min-width:480px) {
+            .menu_1 p {
+                display: none;
+            }
+
+            .contect-1 {
+                display: none;
+            }
+
+            .products_2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .box-pro-2 {
+                height: 300px;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width:480px) and (min-width:150px) {
+            header {
+                padding: 0 0.1em;
+            }
+
+            .menu_1 p {
+                display: none;
+            }
+
+            .contect-1 {
+                display: none;
+            }
+
+            .hdr_name {
+                font-size: 1.5rem;
+            }
+
+            .contect i {
+                font-size: 0.8rem;
+            }
+
+            .menu_1 i {
+                font-size: 0.8rem;
+            }
+
+            #iconic_1 {
+                font-size: 2rem;
+            }
+
+            .section-2 {
+                padding: 0 0.5em;
+            }
+
+            .products_2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .box-pro-2 {
+                max-height: 200px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu_1">
+                <a href="" id="hdr_anc"><i class="fa-solid fa-bars"></i></a>
+                <p>menu</p>
+                <a href="" id="hdr_anc"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></a>
+                <p>search</p>
+            </div>
+
+            <div class="hdr_name">
+                <p id="brand_name">VIBENOVA</p>
+            </div>
+
+            <div class="contect">
+                <a href="" id="hdr_anc" class="contect-1">contect us</a>
+                <a href="" id="hdr_anc"><i class="fa-regular fa-heart" style="color: #000000;"></i></a>
+                <a href="" id="hdr_anc"><i class="fa-regular fa-user" style="color: #000000;"></i></a>
+                <a href="" id="hdr_anc"><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- section-1 -->
+
+    <section id="section-1">
+        <div class="inr_1">
+            <p><a href="" id="sec_id">woman</a></p>
+            <p id="iconic_1">the iconic side truck</p>
+            <p><a href="" id="sec_id" class="shop">shop now</a></p>
+        </div>
+    </section>
+
+    <!-- section-2 -->
+
+    <section class="section-2">
+        <div class="first_line">
+            <p>Shop by Category</p>
+        </div>
+
+        <div class="products_2">
+            <div class="box-pro-2">
+                <img src="./Men_Shoes_New_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">man's shoes</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Men_RTW_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">man's ready-to-wear</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Beauty_Lips_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">beauty</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Women_Shoes_New_WW_HP_Category_Pushes_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">women's shoes</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Men_Bags_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">man's bag</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Men_Accessories_Belts_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">man's belts</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Women_Handbags_2_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">women's bags</a></p>
+            </div>
+            <div class="box-pro-2">
+                <img src="./Women_Wallets_SLG_2_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
+                <p><a href="">women small leather's good</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section-3 -->
+
+    <section class="section-3">
+    </section>
+</body>
+
+</html>
