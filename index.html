@@ -10,16 +10,21 @@
     <title>VibeNova</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Louis Vuitton Web, Louis Vuitton Web Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
         }
 
-        * {
+
+
+        /* * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
             position: relative;
-        }
+        }*/
 
         header {
             position: fixed;
@@ -30,10 +35,167 @@
             display: flex;
             align-items: center;
             padding: 0 1vh;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 999;
         }
 
         nav {
+            width: 99%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 7px;
+        }
+
+        #hdr_anc {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Left side */
+        .menu-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-left i {
+            font-size: 1.3rem;
+        }
+
+        /* Center Brand */
+        .hdr_name {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        /* Right side */
+        .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-right i {
+            font-size: 1.3rem;
+        }
+
+        .contact-text {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* ====== MOBILE MENU (LEFT SIDE) ====== */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-btn {
+            display: block;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2001;
+            color: black;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: 80px 30px;
+            gap: 25px;
+            transition: left 0.4s ease-in-out;
+            z-index: 2000;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.4s ease;
+        }
+
+        #menu-toggle:checked~.mobile-nav {
+            left: 0;
+        }
+
+        #menu-toggle:checked~.mobile-nav a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-nav a:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-nav a:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav a:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav a:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+
+        .mobile-nav a:nth-child(6) {
+            transition-delay: 0.5s;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        /* ===== UNDERLINE HOVER EFFECT FOR MENU LINKS ===== */
+nav a,
+.mobile-nav a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a::after,
+.mobile-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+.mobile-nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover,
+.mobile-nav a:hover {
+  color: #333;
+}
+
+        /* nav {
             width: 100%;
             display: flex;
             align-items: center;
@@ -64,7 +226,7 @@
         #hdr_anc {
             text-decoration: none;
             color: black;
-        }
+        } */
 
         /* section-1 */
 
@@ -108,7 +270,7 @@
         .section-2 {
             width: 100%;
             text-align: center;
-            padding: 0 1vh;
+            /* padding: 0 1vh; */
             margin-top: 40px;
         }
 
@@ -121,7 +283,10 @@
         .products_2 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 10px;
+        }
+        .box-pro-2{
+            padding: 0 1vh;
         }
 
         .box-pro-2 img {
@@ -283,7 +448,7 @@
                 font-size: 1.5rem;
             }
 
-            .contect-1 {
+            .contact-text {
                 display: none;
             }
 
@@ -298,12 +463,21 @@
             .products_2 {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .search-1{
+                display: none;
+            }
         }
 
         @media (max-width:480px) and (min-width:0px) {
-            #iconic_1{
+            .s-4-b-img-inf {
+                font-size: 0.6em;
+                line-height: normal;
+            }
+
+            #iconic_1 {
                 font-size: 1.6em;
             }
+
             .hdr_name {
                 font-size: 1.2rem;
             }
@@ -324,30 +498,63 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* Responsive behavior */
+        /* @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-nav {
+                display: none;
+            }
+        } */
+
+        /* ========================== */
     </style>
 </head>
 
 <body>
     <header>
+        <!-- Toggle Checkbox -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- Hamburger -->
+        <label for="menu-toggle" class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- Desktop Nav -->
         <nav>
-            <div class="menu_1">
-                <a href="" id="hdr_anc"><i class="fa-solid fa-bars"></i></a>
-                <p>menu</p>
-                <a href="" id="hdr_anc"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></a>
-                <p>search</p>
+            <div class="menu-left">
+                <a href="#" id="hdr_anc"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <p class="search-1">Search</p>
             </div>
 
-            <div class="hdr_name">
-                <p id="brand_name">VIBENOVA</p>
-            </div>
+            <div class="hdr_name">VIBENOVA</div>
 
-            <div class="contect">
-                <a href="" id="hdr_anc" class="contect-1">contect us</a>
-                <a href="" id="hdr_anc"><i class="fa-regular fa-heart" style="color: #000000;"></i></a>
-                <a href="" id="hdr_anc"><i class="fa-regular fa-user" style="color: #000000;"></i></a>
-                <a href="" id="hdr_anc"><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i></a>
+            <div class="menu-right">
+                <a href="#" id="hdr_anc" class="contact-text">Contact Us</a>
+                <a href="#" id="hdr_anc"><i class="fa-regular fa-heart"></i></a>
+                <a href="#" id="hdr_anc"><i class="fa-regular fa-user"></i></a>
+                <a href="#" id="hdr_anc"><i class="fa-solid fa-bag-shopping"></i></a>
             </div>
         </nav>
+
+        <!-- Mobile Nav -->
+        <div class="mobile-nav">
+            <label for="menu-toggle" class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Contact</a>
+        </div>
     </header>
 
     <!-- section-1 -->
