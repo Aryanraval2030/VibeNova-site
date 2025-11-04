@@ -18,6 +18,7 @@
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
+            position: relative;
         }
 
         header {
@@ -28,8 +29,8 @@
             width: 100%;
             display: flex;
             align-items: center;
-            padding: 0px 1em;
-            background-color: rgba(252, 252, 252, 0.5);
+            padding: 0 1vh;
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
         nav {
@@ -105,10 +106,9 @@
         /* section-2 */
 
         .section-2 {
-            /* height: 100vh; */
             width: 100%;
             text-align: center;
-            padding: 0 1.7em;
+            padding: 0 1vh;
             margin-top: 40px;
         }
 
@@ -146,19 +146,21 @@
         /* section-4 */
 
         .section-4 {
-            /* height: 110vh; */
-            max-width: 100%;
+            /* max-width: 100%; */
             margin-top: 40px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            padding: 0 1.5em;
+            padding: 0 1vh;
+            /* text-align: center; */
         }
 
         .s-4-boxes {
-            height: 60vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background: linear-gradient(to bottom, rgba(82, 82, 82, 0.125), rgb(255, 255, 255));
-            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.121), rgba(0, 0, 0, 0.099)); */
         }
 
         .s-4-b-img-8 {
@@ -167,6 +169,13 @@
             background-size: cover;
             background-position: center;
             transition-duration: 0.2s;
+        }
+
+        .s-4-boxes>div:first-child {
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.3s ease;
         }
 
         .s-4-b-img-8:hover {
@@ -229,30 +238,6 @@
             transition-duration: 0.2s;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
         .s-4-b-img-3:hover {
             background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-waxed-denim-jacket--HUA12WB71215_PM1_Cropped%20worn%20view.png?wid=730&hei=730);
         }
@@ -282,147 +267,61 @@
         }
 
         .s-4-b-img-inf {
-            padding: 0 5px;
-            font-size: 11px;
-            line-height: 20px;
+            padding: 8px;
+            font-size: 1vw;
+            line-height: 1.4vw;
         }
 
         /* responsive */
-        @media (max-width:1279px) and (min-width:1024px) {
+
+        @media (max-width: 1280px) {}
+
+        @media (max-width:929px) {}
+
+        @media (max-width:768px) {
             .hdr_name {
-                font-size: 2rem;
-            }
-
-            .contect i {
-                font-size: 1.7rem;
-            }
-
-            .menu_1 i {
-                font-size: 1.7rem;
-            }
-
-            .box-pro-2 {
-                height: 350px;
-                max-width: 390px;
+                font-size: 1.5rem;
             }
 
             .contect-1 {
-                font-size: 1.5rem;
+                display: none;
             }
 
             .menu_1 p {
-                font-size: 1.5rem;
-            }
-
-            .s-4-boxes {
-                height: 48vh;
-            }
-
-            .section-4 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            /* .s-4-b-img-inf{
-                padding: 2px;
-             } */
-        }
-
-        @media (max-width:1024px) and (min-width:768px) {
-            .box-pro-2 {
-                height: 250px;
-                max-width: 350px;
-            }
-
-            .box-pro-2 img {
-                height: 80%;
+                display: none;
             }
 
             .section-4 {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-        @media (max-width:768px) and (min-width:480px) {
-            .menu_1 p {
-                display: none;
-            }
-
-            .contect-1 {
-                display: none;
             }
 
             .products_2 {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .box-pro-2 {
-                height: 300px;
-                max-width: 300px;
-            }
-
-            .box-pro-2 img {
-                height: 80%;
-            }
-
-            .section-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
-        @media (max-width:480px) and (min-width:150px) {
-            header {
-                padding: 0 0.2em;
+        @media (max-width:480px) and (min-width:0px) {
+            #iconic_1{
+                font-size: 1.6em;
             }
-
-            .menu_1 p {
-                display: none;
+            .hdr_name {
+                font-size: 1.2rem;
             }
 
             .contect-1 {
                 display: none;
             }
 
-            .hdr_name {
-                font-size: 1rem;
+            .menu_1 p {
+                display: none;
             }
 
-            .contect i {
-                font-size: 0.9rem;
-            }
-
-            .menu_1 i {
-                font-size: 0.9rem;
-            }
-
-            #iconic_1 {
-                font-size: 1rem;
-            }
-
-            .section-2 {
-                padding: 0 0.5em;
+            .section-4 {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .products_2 {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .box-pro-2 {
-                max-height: 200px;
-                max-width: 200px;
-            }
-
-            .box-pro-2 img {
-                height: 80%;
-            }
-
-            .section-4 {
-                grid-template-columns: repeat(1, 1fr);
-                padding: 0 7px;
-            }
-
-            .s-4-boxes {
-                height: 50vh;
             }
         }
     </style>
