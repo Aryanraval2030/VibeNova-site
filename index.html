@@ -16,16 +16,6 @@
             font-family: Louis Vuitton Web, Louis Vuitton Web Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
         }
 
-
-
-        /* * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            position: relative;
-        }*/
-
         header {
             position: fixed;
             top: 0px;
@@ -163,70 +153,38 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
+
         /* ===== UNDERLINE HOVER EFFECT FOR MENU LINKS ===== */
-nav a,
-.mobile-nav a {
-  position: relative;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a::after,
-.mobile-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background-color: black;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after,
-.mobile-nav a:hover::after {
-  width: 100%;
-}
-
-nav a:hover,
-.mobile-nav a:hover {
-  color: #333;
-}
-
-        /* nav {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .menu_1 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .menu_1 p,
-        i {
-            font-size: 1.2rem;
-        }
-
-        .hdr_name {
-            font-size: 2rem;
-            font-weight: 900;
-        }
-
-        .contect p,
-        i {
-            font-size: 1.2rem;
-        }
-
-        #hdr_anc {
+        nav a,
+        .mobile-nav a {
+            position: relative;
             text-decoration: none;
             color: black;
-        } */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after,
+        .mobile-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        .mobile-nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover,
+        .mobile-nav a:hover {
+            color: #333;
+        }
 
         /* section-1 */
 
@@ -251,7 +209,6 @@ nav a:hover,
             justify-self: center;
             font-weight: 500;
             font-size: 1.5em;
-
         }
 
         #iconic_1 {
@@ -270,7 +227,6 @@ nav a:hover,
         .section-2 {
             width: 100%;
             text-align: center;
-            /* padding: 0 1vh; */
             margin-top: 40px;
         }
 
@@ -285,7 +241,8 @@ nav a:hover,
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
         }
-        .box-pro-2{
+
+        .box-pro-2 {
             padding: 0 1vh;
         }
 
@@ -311,13 +268,11 @@ nav a:hover,
         /* section-4 */
 
         .section-4 {
-            /* max-width: 100%; */
             margin-top: 40px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             padding: 0 1vh;
-            /* text-align: center; */
         }
 
         .s-4-boxes {
@@ -325,7 +280,7 @@ nav a:hover,
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: linear-gradient(to bottom, rgba(82, 82, 82, 0.125), rgb(255, 255, 255));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.125), rgb(255, 255, 255));
         }
 
         .s-4-b-img-8 {
@@ -391,6 +346,10 @@ nav a:hover,
             transition-duration: 0.2s;
         }
 
+        .fa-bars {
+            margin-right: 5px;
+        }
+
         .s-4-b-img-4:hover {
             background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-drift-monogram-surplus-35mm-belt--M4543U_PM1_Cropped%20worn%20view.png?wid=730&hei=730);
         }
@@ -437,6 +396,103 @@ nav a:hover,
             line-height: 1.4vw;
         }
 
+        /* section-5 */
+
+        .section-5 {
+            height: 95vh;
+            width: 100%;
+            margin-top: 40px;
+            background-image: url(https://ap.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/brand-content-coremedia/men/2025/category/leather-goods/MEN_BC_LG_PRECO_SS26_04_DI3.jpg?wid=1440);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* section-6 */
+        .section-6 {
+            width: 100%;
+            margin-top: 40px;
+            background-position: center;
+            text-align: center;
+        }
+
+
+
+        .section-6>p:first-child {
+            font-size: 0.7em;
+        }
+
+        .section-6>p:nth-child(2) {
+            font-size: 2rem;
+        }
+
+        .sec-6-boxes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 0 1vh;
+            gap: 10px;
+        }
+
+        .sec-6-inr-box {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.125), rgb(255, 255, 255));
+        }
+
+
+        .s-6-text {
+            height: 15%;
+            font-size: 2.3vh;
+            text-align: left;
+            padding: 0px 8px;
+        }
+
+        #s-6-i-1 {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26979_PM2_Front%20view.png?wid=490&hei=490);
+            background-size: cover;
+            transition-duration: 0.2s;
+        }
+
+        #s-6-i-1:hover {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26979_PM1_Interior%20view.png?wid=730&hei=730);
+        }
+
+        #s-6-i-2 {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M27020_PM2_Front%20view.png?wid=490&hei=490);
+            background-size: cover;
+            transition-duration: 0.2s;
+        }
+
+        #s-6-i-2:hover {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M27020_PM1_Interior%20view.png?wid=730&hei=730);
+        }
+
+        #s-6-i-3 {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26840_PM2_Front%20view.png?wid=490&hei=490);
+            background-size: cover;
+            transition-duration: 0.2s;
+
+        }
+
+        #s-6-i-3:hover {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26840_PM1_Interior%20view.png?wid=730&hei=730);
+        }
+
+        #s-6-i-4 {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-passport-cover--M27099_PM2_Front%20view.png?wid=490&hei=490);
+            background-size: cover;
+            transition-duration: 0.2s;
+        }
+
+        #s-6-i-4:hover {
+            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-passport-cover--M27099_PM1_Interior%20view.png?wid=730&hei=730);
+        }
+
+        .sec-6-inr-box>div:first-child {
+            aspect-ratio: 1/1;
+        }
+
         /* responsive */
 
         @media (max-width: 1280px) {}
@@ -463,14 +519,33 @@ nav a:hover,
             .products_2 {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .search-1{
+
+            .search-1 {
                 display: none;
+            }
+
+            .sec-6-boxes {
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .section-6>p:nth-child(2) {
+                font-size: 7vmin;
             }
         }
 
         @media (max-width:480px) and (min-width:0px) {
+            .fa-heart {
+                display: none;
+            }
+
             .s-4-b-img-inf {
-                font-size: 0.6em;
+                font-size: 0.7em;
+                line-height: normal;
+            }
+
+            .s-6-text {
+                font-size: 0.7em;
                 line-height: normal;
             }
 
@@ -494,34 +569,21 @@ nav a:hover,
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .sec-6-boxes {
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
             .products_2 {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        /* Responsive behavior */
-        /* @media (max-width: 768px) {
-            .menu-btn {
-                display: block;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .mobile-nav {
-                display: none;
-            }
-        } */
-
-        /* ========================== */
     </style>
 </head>
 
 <body>
     <header>
-        <!-- Toggle Checkbox -->
         <input type="checkbox" id="menu-toggle">
-
-        <!-- Hamburger -->
         <label for="menu-toggle" class="menu-btn">
             <i class="fa-solid fa-bars"></i>
         </label>
@@ -546,7 +608,7 @@ nav a:hover,
         <!-- Mobile Nav -->
         <div class="mobile-nav">
             <label for="menu-toggle" class="close-btn">
-                <i class="fa-solid fa-xmark"></i>
+                <!-- <i class="fa-solid fa-xmark"></i> -->
             </label>
 
             <a href="#">Home</a>
@@ -689,6 +751,53 @@ nav a:hover,
             <div class="s-4-b-img-inf">
                 <p>VibeNova Monogram Flowers Blouson Jacquard T-shirt</p>
                 <p>₹1,50,000.00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section-5 -->
+
+    <section class="section-5">
+    </section>
+
+    <!-- section-6 -->
+
+    <section class="section-6">
+        <p>MEN</p>
+        <p>Latest Cardholders for Men</p>
+
+        <div class="sec-6-boxes">
+            <div class="sec-6-inr-box">
+                <div class="s-6-imges" id="s-6-i-1">
+                </div>
+                <div class="s-6-text">
+                    <p>pocket organizer</p>
+                    <p>₹41,500.00</p>
+                </div>
+            </div>
+            <div class="sec-6-inr-box">
+                <div class="s-6-imges" id="s-6-i-2">
+                </div>
+                <div class="s-6-text">
+                    <p>pocket organizer</p>
+                    <p>₹40,500.00</p>
+                </div>
+            </div>
+            <div class="sec-6-inr-box">
+                <div class="s-6-imges" id="s-6-i-3">
+                </div>
+                <div class="s-6-text">
+                    <p>pocket organizer</p>
+                    <p>₹41,000.00</p>
+                </div>
+            </div>
+            <div class="sec-6-inr-box">
+                <div class="s-6-imges" id="s-6-i-4">
+                </div>
+                <div class="s-6-text">
+                    <p>pocket organizer</p>
+                    <p>₹41,500.00</p>
+                </div>
             </div>
         </div>
     </section>
