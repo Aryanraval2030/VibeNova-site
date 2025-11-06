@@ -1,837 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>VibeNova</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Louis Vuitton Web, Louis Vuitton Web Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
-        }
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-        header {
-            position: fixed;
-            top: 0px;
-            z-index: 999;
-            height: 15vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 1vh;
-            background-color: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            z-index: 999;
-        }
-
-        nav {
-            width: 99%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-right: 7px;
-        }
-
-        #hdr_anc {
-            text-decoration: none;
-            color: black;
-        }
-
-        /* Left side */
-        .menu-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .menu-left i {
-            font-size: 1.3rem;
-        }
-
-        /* Center Brand */
-        .hdr_name {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-
-        /* Right side */
-        .menu-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .menu-right i {
-            font-size: 1.3rem;
-        }
-
-        .contact-text {
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        /* ====== MOBILE MENU (LEFT SIDE) ====== */
-        #menu-toggle {
-            display: none;
-        }
-
-        .menu-btn {
-            display: block;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 2001;
-            color: black;
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 60%;
-            height: 100vh;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            padding: 80px 30px;
-            gap: 25px;
-            transition: left 0.4s ease-in-out;
-            z-index: 2000;
-            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .mobile-nav a {
-            text-decoration: none;
-            color: black;
-            font-size: 1.2rem;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.4s ease;
-        }
-
-        #menu-toggle:checked~.mobile-nav {
-            left: 0;
-        }
-
-        #menu-toggle:checked~.mobile-nav a {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .mobile-nav a:nth-child(2) {
-            transition-delay: 0.1s;
-        }
-
-        .mobile-nav a:nth-child(3) {
-            transition-delay: 0.2s;
-        }
-
-        .mobile-nav a:nth-child(4) {
-            transition-delay: 0.3s;
-        }
-
-        .mobile-nav a:nth-child(5) {
-            transition-delay: 0.4s;
-        }
-
-        .mobile-nav a:nth-child(6) {
-            transition-delay: 0.5s;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* ===== UNDERLINE HOVER EFFECT FOR MENU LINKS ===== */
-        nav a,
-        .mobile-nav a {
-            position: relative;
-            text-decoration: none;
-            color: black;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a::after,
-        .mobile-nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 0%;
-            height: 2px;
-            background-color: black;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after,
-        .mobile-nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a:hover,
-        .mobile-nav a:hover {
-            color: #333;
-        }
-
-        /* section-1 */
-
-        #section-1 {
-            position: relative;
-            background-image: url(./cYtr9mOZauDYKdwGqYxQoJUK.jpg);
-            background-size: cover;
-            height: 95vh;
-            width: 100%;
-        }
-
-        .inr_1 {
-            width: 100%;
-            position: absolute;
-            bottom: 10px;
-        }
-
-        #sec_id {
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            display: flex;
-            justify-self: center;
-            font-weight: 500;
-            font-size: 1.5em;
-        }
-
-        #iconic_1 {
-            display: flex;
-            justify-self: center;
-            font-size: 2.5em;
-            font-weight: 900;
-        }
-
-        .shop {
-            border-bottom: 3px solid black;
-        }
-
-        /* section-2 */
-
-        .section-2 {
-            width: 100%;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .first_line {
-            font-size: 2em;
-            margin: 10px;
-            font-weight: 500;
-        }
-
-        .products_2 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .box-pro-2 {
-            padding: 0 1vh;
-        }
-
-        .box-pro-2 img {
-            height: 70%;
-        }
-
-        .box-pro-2 a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-        }
-
-        /* section-3 */
-
-        .section-3 {
-            height: 100vh;
-            max-width: 100%;
-            margin-top: 40px;
-            background-image: url(./PUSH2_LV_SKI_V2_DI3.webp);
-            background-size: cover;
-            position: sticky;
-            top: 1px;
-            z-index: 1;
-        }
-
-        /* section-4 */
-
-        .section-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            padding: 0 1vh;
-            position: relative;
-            top: 1px;
-            z-index: 2;
-            padding-top: 40px;
-            background-color: white;
-        }
-
-        .s-4-boxes {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.125), rgb(255, 255, 255));
-        }
-
-        .s-4-b-img-8 {
-            height: 80%;
-            background-image: url(./louis-vuitton-monogram-reversible-windbreaker--HUB25WCM36D9_PM2_Front\ view.webp);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-boxes>div:first-child {
-            aspect-ratio: 1/1;
-            background-size: cover;
-            background-position: center;
-            transition: background-image 0.3s ease;
-        }
-
-        .s-4-b-img-8:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-reversible-windbreaker--HUB25WCM36D9_PM1_Cropped%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-7 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-silk-shorts--HUP14WCM4778_PM2_Front%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-b-img-7:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-silk-shorts--HUP14WCM4778_PM1_Cropped%20worn%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-6 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-short-sleeved-silk-shirt--HUS04WCM4778_PM2_Front%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-b-img-6:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-short-sleeved-silk-shirt--HUS04WCM4778_PM1_Cropped%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-5 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-tilted-sneaker--BVU012SC02_PM1_Side%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-b-img-5:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-tilted-sneaker--BVU012SC92_PM1_Cropped%20worn%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-4 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-drift-monogram-surplus-35mm-belt--M4543U_PM1_Detail%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .fa-bars {
-            margin-right: 5px;
-        }
-
-        .s-4-b-img-4:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-drift-monogram-surplus-35mm-belt--M4543U_PM1_Cropped%20worn%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-3 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-waxed-denim-jacket--HUA12WB71215_PM2_Front%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-b-img-3:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-waxed-denim-jacket--HUA12WB71215_PM1_Cropped%20worn%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-2 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-short-sleeved-crewneck--HUN18WAUR148_PM2_Front%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-b-img-2:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-short-sleeved-crewneck--HUN18WAUR148_PM1_Cropped%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-1 {
-            height: 80%;
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-waxed-denim-pants--HUD12WB71215_PM2_Front%20view.png?wid=730&hei=730);
-            background-size: cover;
-            background-position: center;
-            transition-duration: 0.2s;
-        }
-
-        .s-4-b-img-1:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-waxed-denim-pants--HUD12WB71215_PM1_Cropped%20view.png?wid=730&hei=730);
-        }
-
-        .s-4-b-img-inf {
-            padding: 8px;
-            font-size: 1vw;
-            line-height: 1.4vw;
-        }
-
-        /* section-5 */
-
-        .section-5 {
-            height: 95vh;
-            width: 100%;
-            padding-top: 40px;
-            background-image: url(https://ap.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/brand-content-coremedia/men/2025/category/leather-goods/MEN_BC_LG_PRECO_SS26_04_DI3.jpg?wid=1440);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: sticky;
-            top: 1px;
-            z-index: 1;
-
-        }
-
-        /* section-6 */
-        .section-6 {
-            width: 100%;
-            padding-top: 40px;
-            background-position: center;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            background-color: rgb(255, 255, 255);
-
-        }
-
-
-
-        .section-6>p:first-child {
-            font-size: 0.7em;
-        }
-
-        .section-6>p:nth-child(2) {
-            font-size: 2rem;
-        }
-
-        .sec-6-boxes {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            padding: 0 1vh;
-            gap: 10px;
-        }
-
-        .sec-6-inr-box {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.125), rgb(255, 255, 255));
-        }
-
-
-        .s-6-text {
-            height: 15%;
-            font-size: 2.3vh;
-            text-align: left;
-            padding: 0px 8px;
-        }
-
-        #s-6-i-1 {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26979_PM2_Front%20view.png?wid=490&hei=490);
-            background-size: cover;
-            transition-duration: 0.2s;
-        }
-
-        #s-6-i-1:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26979_PM1_Interior%20view.png?wid=730&hei=730);
-        }
-
-        #s-6-i-2 {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M27020_PM2_Front%20view.png?wid=490&hei=490);
-            background-size: cover;
-            transition-duration: 0.2s;
-        }
-
-        #s-6-i-2:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M27020_PM1_Interior%20view.png?wid=730&hei=730);
-        }
-
-        #s-6-i-3 {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26840_PM2_Front%20view.png?wid=490&hei=490);
-            background-size: cover;
-            transition-duration: 0.2s;
-
-        }
-
-        #s-6-i-3:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26840_PM1_Interior%20view.png?wid=730&hei=730);
-        }
-
-        #s-6-i-4 {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-passport-cover--M27099_PM2_Front%20view.png?wid=490&hei=490);
-            background-size: cover;
-            transition-duration: 0.2s;
-        }
-
-        #s-6-i-4:hover {
-            background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-passport-cover--M27099_PM1_Interior%20view.png?wid=730&hei=730);
-        }
-
-        .sec-6-inr-box>div:first-child {
-            aspect-ratio: 1/1;
-        }
-
-        /* responsive */
-
-        @media (max-width: 1280px) {}
-
-        @media (max-width:929px) {}
-
-        @media (max-width:768px) {
-            .hdr_name {
-                font-size: 1.5rem;
-            }
-
-            .contact-text {
-                display: none;
-            }
-
-            .menu_1 p {
-                display: none;
-            }
-
-            .section-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .products_2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .search-1 {
-                display: none;
-            }
-
-            .sec-6-boxes {
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            .section-6>p:nth-child(2) {
-                font-size: 7vmin;
-            }
-        }
-
-        @media (max-width:480px) and (min-width:0px) {
-            .fa-heart {
-                display: none;
-            }
-
-            .s-4-b-img-inf {
-                font-size: 0.7em;
-                line-height: normal;
-            }
-
-            .s-6-text {
-                font-size: 0.7em;
-                line-height: normal;
-            }
-
-            #iconic_1 {
-                font-size: 1.6em;
-            }
-
-            .hdr_name {
-                font-size: 1.2rem;
-            }
-
-            .contect-1 {
-                display: none;
-            }
-
-            .menu_1 p {
-                display: none;
-            }
-
-            .section-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .sec-6-boxes {
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            .products_2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .section-7{
-            height: 100vh;
-            position: sticky;
-            top: 1px;
-            z-index: 2;
-            background-image: url(https://www.louisvuitton.com/images/is/image/lv/W_BC_LG_COUSSIN%20BUCKET_Oct25_DI3.jpg?wid=2400)
-            ;
-            background-position: center;
-            background-size: cover;
-    
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-btn">
-            <i class="fa-solid fa-bars"></i>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <!-- Desktop Nav -->
+      <nav>
+        <div class="menu-left">
+          <a href="#" id="hdr_anc"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+          <p class="search-1">Search</p>
+        </div>
+
+        <div class="hdr_name">VIBENOVA</div>
+
+        <div class="menu-right">
+          <a href="#" id="hdr_anc" class="contact-text">Contact Us</a>
+          <a href="#" id="hdr_anc"><i class="fa-regular fa-heart"></i></a>
+          <a href="#" id="hdr_anc"><i class="fa-regular fa-user"></i></a>
+          <a href="#" id="hdr_anc"><i class="fa-solid fa-bag-shopping"></i></a>
+        </div>
+      </nav>
+
+      <!-- Mobile Nav -->
+      <div class="mobile-nav">
+        <label for="menu-toggle" class="close-btn">
+          <!-- <i class="fa-solid fa-xmark"></i> -->
         </label>
 
-        <!-- Desktop Nav -->
-        <nav>
-            <div class="menu-left">
-                <a href="#" id="hdr_anc"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <p class="search-1">Search</p>
-            </div>
-
-            <div class="hdr_name">VIBENOVA</div>
-
-            <div class="menu-right">
-                <a href="#" id="hdr_anc" class="contact-text">Contact Us</a>
-                <a href="#" id="hdr_anc"><i class="fa-regular fa-heart"></i></a>
-                <a href="#" id="hdr_anc"><i class="fa-regular fa-user"></i></a>
-                <a href="#" id="hdr_anc"><i class="fa-solid fa-bag-shopping"></i></a>
-            </div>
-        </nav>
-
-        <!-- Mobile Nav -->
-        <div class="mobile-nav">
-            <label for="menu-toggle" class="close-btn">
-                <!-- <i class="fa-solid fa-xmark"></i> -->
-            </label>
-
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Contact</a>
-        </div>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Contact</a>
+      </div>
     </header>
 
     <!-- section-1 -->
 
     <section id="section-1">
-        <div class="inr_1">
-            <p><a href="" id="sec_id">woman</a></p>
-            <p id="iconic_1">the iconic side truck</p>
-            <p><a href="" id="sec_id" class="shop">shop now</a></p>
-        </div>
+      <div class="inr_1">
+        <p><a href="" id="sec_id">woman</a></p>
+        <p id="iconic_1">the iconic side truck</p>
+        <p><a href="" id="sec_id" class="shop">shop now</a></p>
+      </div>
     </section>
 
     <!-- section-2 -->
 
     <section class="section-2">
-        <div class="first_line">
-            <p>Shop by Category</p>
-        </div>
+      <div class="first_line">
+        <p>Shop by Category</p>
+      </div>
 
-        <div class="products_2">
-            <div class="box-pro-2">
-                <img src="./Men_Shoes_New_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">man's shoes</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Men_RTW_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">man's ready-to-wear</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Beauty_Lips_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">beauty</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Women_Shoes_New_WW_HP_Category_Pushes_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">women's shoes</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Men_Bags_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">man's bag</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Men_Accessories_Belts_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">man's belts</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Women_Handbags_2_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">women's bags</a></p>
-            </div>
-            <div class="box-pro-2">
-                <img src="./Women_Wallets_SLG_2_WW_HP_Category_Push_DII.webp" alt="" height="100%" width="100%">
-                <p><a href="">women small leather's good</a></p>
-            </div>
+      <div class="products_2">
+        <div class="box-pro-2">
+          <img
+            src="./Men_Shoes_New_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">man's shoes</a></p>
         </div>
+        <div class="box-pro-2">
+          <img
+            src="./Men_RTW_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">man's ready-to-wear</a></p>
+        </div>
+        <div class="box-pro-2">
+          <img
+            src="./Beauty_Lips_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">beauty</a></p>
+        </div>
+        <div class="box-pro-2">
+          <img
+            src="./Women_Shoes_New_WW_HP_Category_Pushes_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">women's shoes</a></p>
+        </div>
+        <div class="box-pro-2">
+          <img
+            src="./Men_Bags_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">man's bag</a></p>
+        </div>
+        <div class="box-pro-2">
+          <img
+            src="./Men_Accessories_Belts_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">man's belts</a></p>
+        </div>
+        <div class="box-pro-2">
+          <img
+            src="./Women_Handbags_2_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">women's bags</a></p>
+        </div>
+        <div class="box-pro-2">
+          <img
+            src="./Women_Wallets_SLG_2_WW_HP_Category_Push_DII.webp"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+          <p><a href="">women small leather's good</a></p>
+        </div>
+      </div>
     </section>
 
     <!-- section-3 -->
 
-    <section class="section-3">
-    </section>
+    <section class="section-3"></section>
 
     <!-- section-4 -->
 
     <section class="section-4">
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-1" id="s-4-imgs">
-            </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-1" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova shiny pattern all-over Monogram Waxed Denim Pants</p>
-                <p>₹2,20,000.00</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova shiny pattern all-over Monogram Waxed Denim Pants</p>
+          <p>₹2,20,000.00</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-2" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-2" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova Towelling Monogram Jacquard Crewneck T-shirt</p>
-                <p>₹1,20,000</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova Towelling Monogram Jacquard Crewneck T-shirt</p>
+          <p>₹1,20,000</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-3" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-3" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova Single-breasted tailored Monogram Waxed Denim Jacket</p>
-                <p>₹3,35,000.00</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova Single-breasted tailored Monogram Waxed Denim Jacket</p>
+          <p>₹3,35,000.00</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-4" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-4" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova Engraved Metal Buckle Monogram Waxed Denim Belt</p>
-                <p>₹78,000.00</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova Engraved Metal Buckle Monogram Waxed Denim Belt</p>
+          <p>₹78,000.00</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-5" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-5" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova Low-top Surplus pattern natural Skate Sneakers</p>
-                <p>₹98,000.00</p>
-
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova Low-top Surplus pattern natural Skate Sneakers</p>
+          <p>₹98,000.00</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-6" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-6" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova shiny pattern Monogram Jacquard Crewneck Shirt</p>
-                <p>₹1,15,000.00</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova shiny pattern Monogram Jacquard Crewneck Shirt</p>
+          <p>₹1,15,000.00</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-7" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-7" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova waistline elasticated Water-Repellent Monogram Shorts</p>
-                <p>₹70,000.00</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova waistline elasticated Water-Repellent Monogram Shorts</p>
+          <p>₹70,000.00</p>
         </div>
-        <div class="s-4-boxes">
-            <div class="s-4-b-img-8" id="s-4-imgs">
-            </div>
+      </div>
+      <div class="s-4-boxes">
+        <div class="s-4-b-img-8" id="s-4-imgs"></div>
 
-            <div class="s-4-b-img-inf">
-                <p>VibeNova Monogram Flowers Blouson Jacquard T-shirt</p>
-                <p>₹1,50,000.00</p>
-            </div>
+        <div class="s-4-b-img-inf">
+          <p>VibeNova Monogram Flowers Blouson Jacquard T-shirt</p>
+          <p>₹1,50,000.00</p>
         </div>
+      </div>
     </section>
 
     <!-- section-5 -->
 
-    <section class="section-5">
-    </section>
+    <section class="section-5"></section>
 
     <!-- section-6 -->
 
     <section class="section-6">
-        <p>MEN</p>
-        <p>Latest Cardholders for Men</p>
+      <p>MEN</p>
+      <p>Latest Cardholders for Men</p>
 
-        <div class="sec-6-boxes">
-            <div class="sec-6-inr-box">
-                <div class="s-6-imges" id="s-6-i-1">
-                </div>
-                <div class="s-6-text">
-                    <p>pocket organizer</p>
-                    <p>₹41,500.00</p>
-                </div>
-            </div>
-            <div class="sec-6-inr-box">
-                <div class="s-6-imges" id="s-6-i-2">
-                </div>
-                <div class="s-6-text">
-                    <p>pocket organizer</p>
-                    <p>₹40,500.00</p>
-                </div>
-            </div>
-            <div class="sec-6-inr-box">
-                <div class="s-6-imges" id="s-6-i-3">
-                </div>
-                <div class="s-6-text">
-                    <p>pocket organizer</p>
-                    <p>₹41,000.00</p>
-                </div>
-            </div>
-            <div class="sec-6-inr-box">
-                <div class="s-6-imges" id="s-6-i-4">
-                </div>
-                <div class="s-6-text">
-                    <p>pocket organizer</p>
-                    <p>₹41,500.00</p>
-                </div>
-            </div>
+      <div class="sec-6-boxes">
+        <div class="sec-6-inr-box">
+          <div class="s-6-imges" id="s-6-i-1"></div>
+          <div class="s-6-text">
+            <p>pocket organizer</p>
+            <p>₹41,500.00</p>
+          </div>
         </div>
+        <div class="sec-6-inr-box">
+          <div class="s-6-imges" id="s-6-i-2"></div>
+          <div class="s-6-text">
+            <p>pocket organizer</p>
+            <p>₹40,500.00</p>
+          </div>
+        </div>
+        <div class="sec-6-inr-box">
+          <div class="s-6-imges" id="s-6-i-3"></div>
+          <div class="s-6-text">
+            <p>pocket organizer</p>
+            <p>₹41,000.00</p>
+          </div>
+        </div>
+        <div class="sec-6-inr-box">
+          <div class="s-6-imges" id="s-6-i-4"></div>
+          <div class="s-6-text">
+            <p>pocket organizer</p>
+            <p>₹41,500.00</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="section-7">
+    <section class="section-7"></section>
+    <!-- section-8 -->
+    <section class="section-8">
+      <div class="s-8-inr">
+        <div class="s-8-boxes-img">
+          <img src="" alt="" height="100%" width="100%" />
+        </div>
+        <div class="s-8-text"></div>
+      </div>
 
+      <div class="s-8-inr">
+        <div class="s-8-boxes-img">
+          <img src="" alt="" height="100%" width="100%" />
+        </div>
+        <div class="s-8-text"></div>
+      </div>
+
+      <div class="s-8-inr">
+        <div class="s-8-boxes-img">
+          <img src="" alt="" height="100%" width="100%" />
+        </div>
+        <div class="s-8-text"></div>
+      </div>
+
+      <div class="s-8-inr">
+        <div class="s-8-boxes-img">
+          <img src="" alt="" height="100%" width="100%" />
+        </div>
+        <div class="s-8-text"></div>
+      </div>
     </section>
-
-</body>
-
+  </body>
 </html>
