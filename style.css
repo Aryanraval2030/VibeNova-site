@@ -511,7 +511,7 @@
     }
 
     .section-8 {
-        padding-top: 80px;
+        padding-top: 40px;
         background-position: center;
         text-align: center;
         position: relative;
@@ -560,7 +560,7 @@
     }
 
     #s-8-m-2:hover {
-        background-image: url();
+        background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-vendome-pm--M27040_PM1_Other%20view.png?wid=730&hei=730);
     }
 
     #s-8-m-3 {
@@ -570,7 +570,7 @@
     }
 
     #s-8-m-3:hover {
-        background-image: url();
+        background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-coussin-bucket--M26216_PM1_Interior%20view.png?wid=730&hei=730);
     }
 
     #s-8-m-4 {
@@ -580,7 +580,7 @@
     }
 
     #s-8-m-4:hover {
-        background-image: url();
+        background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-vendome-mm--M26501_PM1_Interior%20view.png?wid=730&hei=730);
     }
 
     .s-8-text {
@@ -592,6 +592,85 @@
     }
 
     .s-8-boxes-img {
+        aspect-ratio: 1/1;
+    }
+
+    /* section-9 */
+    .section-9 {
+        position: relative;
+        width: 100%;
+        z-index: 3;
+        padding-top: 40px;
+        background-color: white;
+        text-align: center;
+    }
+
+    .section-9 p:first-child {
+        font-size: 2rem;
+    }
+
+    .section-9 p:nth-child(2) {
+        font-size: 1.5vmax;
+        padding: 0 4vmax;
+    }
+
+    .s-9-boxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 1vh;
+    }
+
+    .s-9-inr {
+        /* height: 80vh; */
+         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .s-9-9img {
+        height: 90%;
+    } */
+
+    #s-9-text {
+        height: 10%;
+        padding-top: 20px;
+    }
+
+    #s-9-text>p {
+        font-size: 20px;
+    }
+
+    #s-9-i-1 {
+        background-image: url(https://ap.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/New-Homepage/2025/central/services/LV_Personalization_WW_HP_Services_Push_1104_DII.jpg?wid=490);
+        background-position: center;
+        background-size: cover;
+    }
+
+    #s-9-i-2 {
+        background-image: url(https://ap.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/New-Homepage/2024/central/services/LV_Gifting_WW_HP_Services_Push_20240425_DII.jpg?wid=490);
+        background-position: center;
+        background-size: cover;
+    }
+
+    #s-9-i-3 {
+        background-image: url(https://ap.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/New-Homepage/2024/central/services/LV_ContactUs_WW_HP_Services_Push_20240425_DII.jpg?wid=490);
+        background-position: center;
+        background-size: cover;
+    }
+
+    #s-9-text>button {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    #s-9-text>button>a {
+        text-decoration: none;
+        list-style: none;
+        color: black;
+    }
+      .s-9-inr>div:first-child {
         aspect-ratio: 1/1;
     }
 
@@ -629,19 +708,27 @@
         .sec-6-boxes {
             grid-template-columns: repeat(2, 1fr);
         }
-        .s-8-main-inr{
+
+        .s-8-main-inr {
             grid-template-columns: repeat(2, 1fr);
         }
 
         .section-6>p:nth-child(2) {
             font-size: 7vmin;
         }
-         .section-8>p:nth-child(2) {
+
+        .section-8>p:nth-child(2) {
             font-size: 7vmin;
         }
+         .s-9-boxes {
+            grid-template-columns: auto;
+         }
     }
 
     @media (max-width:480px) and (min-width:0px) {
+         .s-9-boxes {
+            grid-template-columns: auto;
+         }
         .fa-heart {
             display: none;
         }
@@ -655,8 +742,9 @@
             font-size: 0.7em;
             line-height: normal;
         }
-        .s-8-text{
-             font-size: 0.7em;
+
+        .s-8-text {
+            font-size: 0.7em;
             line-height: normal;
         }
 
@@ -683,7 +771,8 @@
         .sec-6-boxes {
             grid-template-columns: repeat(2, 1fr);
         }
-        .s-8-main-inr{
+
+        .s-8-main-inr {
             grid-template-columns: repeat(2, 1fr);
         }
 
