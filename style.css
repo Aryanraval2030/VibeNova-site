@@ -421,8 +421,6 @@
 
     }
 
-
-
     .section-6>p:first-child {
         font-size: 0.7em;
     }
@@ -444,7 +442,6 @@
         flex-direction: column;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.125), rgb(255, 255, 255));
     }
-
 
     .s-6-text {
         height: 15%;
@@ -477,7 +474,6 @@
         background-image: url(https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-pocket-organizer--M26840_PM2_Front%20view.png?wid=490&hei=490);
         background-size: cover;
         transition-duration: 0.2s;
-
     }
 
     #s-6-i-3:hover {
@@ -498,8 +494,6 @@
         aspect-ratio: 1/1;
     }
 
-
-
     .section-7 {
         height: 100vh;
         position: sticky;
@@ -518,7 +512,6 @@
         z-index: 2;
         text-align: center;
         background-color: rgb(255, 255, 255);
-
     }
 
     .section-8>p:first-child {
@@ -622,15 +615,10 @@
     }
 
     .s-9-inr {
-        /* height: 80vh; */
-         overflow: hidden;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
     }
-
-    /* .s-9-9img {
-        height: 90%;
-    } */
 
     #s-9-text {
         height: 10%;
@@ -670,8 +658,47 @@
         list-style: none;
         color: black;
     }
-      .s-9-inr>div:first-child {
+
+    .s-9-inr>div:first-child {
         aspect-ratio: 1/1;
+    }
+
+    footer {
+        position: relative;
+        background-color: white;
+        padding-top: 100px;
+        z-index: 4;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    #f-outer-1 {
+        height: 75vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 1vh;
+        border-top: 1px solid rgb(174, 173, 173);
+        border-bottom: 1px solid rgb(220, 220, 220);
+    }
+
+    .f-1-o-inr {
+        height: 100%;
+        text-align: center;
+    }
+
+    .f-1-o-inr>a {
+        display: block;
+        line-height: 5vmin;
+        font-size: 0.9rem;
+        list-style: none;
+        text-decoration: none;
+        color: rgb(36, 3, 43);
+        font-weight: 100;
+    }
+
+    .f-1-o-inr a>span {
+        text-decoration: underline;
+        color: black;
     }
 
     /* responsive */
@@ -681,6 +708,17 @@
     @media (max-width:929px) {}
 
     @media (max-width:768px) {
+
+        .f-1-o-inr:first-child {
+            font-size: 1rem;
+        }
+
+        .f-1-o-inr>a {
+            line-height: 4.7vmin;
+
+            font-size: 0.7rem;
+        }
+
         .hdr_name {
             font-size: 1.5rem;
         }
@@ -720,15 +758,29 @@
         .section-8>p:nth-child(2) {
             font-size: 7vmin;
         }
-         .s-9-boxes {
+
+        .s-9-boxes {
             grid-template-columns: auto;
-         }
+        }
     }
 
     @media (max-width:480px) and (min-width:0px) {
-         .s-9-boxes {
+         .f-1-o-inr:first-child {
+            font-size: 1rem;
+        }
+
+        .f-1-o-inr>a {
+            line-height: 4.7vmin;
+
+            font-size: 0.7rem;
+        }
+        #f-outer-1{
+            grid-template-columns: auto auto;
+        }
+        .s-9-boxes {
             grid-template-columns: auto;
-         }
+        }
+
         .fa-heart {
             display: none;
         }
