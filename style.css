@@ -693,7 +693,7 @@
         list-style: none;
         text-decoration: none;
         color: rgb(0, 0, 0);
-        font-weight: 300;
+        font-weight: 500;
     }
 
     .f-1-o-inr a>span {
@@ -714,9 +714,9 @@
         }
 
         .f-1-o-inr>a {
-            line-height: 4.7vmin;
+            line-height: 5vmin;
 
-            font-size: 0.7rem;
+            font-size: 0.9rem;
         }
 
         .hdr_name {
