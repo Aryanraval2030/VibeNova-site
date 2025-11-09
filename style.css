@@ -692,8 +692,8 @@
         font-size: 0.9rem;
         list-style: none;
         text-decoration: none;
-        color: rgb(36, 3, 43);
-        font-weight: 100;
+        color: rgb(0, 0, 0);
+        font-weight: 300;
     }
 
     .f-1-o-inr a>span {
