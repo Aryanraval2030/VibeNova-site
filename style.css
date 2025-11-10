@@ -631,6 +631,9 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        justify-self: center;
+        height: 300px;
+        width: 300px;
     }
 
     #s-9-text {
@@ -794,6 +797,10 @@
             width: 50vw;
             margin: 0 5px;
         }
+        .s-9-inr{
+                    height: 60vh;
+        width: 60vw;
+        }
 
         .f-1-o-inr:first-child {
             font-size: 1rem;
@@ -815,6 +822,7 @@
         .menu_1 p {
             display: none;
         }
+
         .section-4 {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -844,7 +852,10 @@
         }
 
         .s-9-boxes {
-            grid-template-columns: auto;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            
         }
     }
 
@@ -872,7 +883,9 @@
         }
 
         .s-9-boxes {
-            grid-template-columns: auto;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
         }
 
         .fa-heart {
