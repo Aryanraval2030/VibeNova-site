@@ -673,7 +673,6 @@
     }
 
     #f-outer-1 {
-        height: 75vh;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding: 0 1vh;
@@ -682,17 +681,16 @@
     }
 
     .f-1-o-inr {
-        height: 100%;
         text-align: center;
     }
 
     .f-1-o-inr>a {
         display: block;
-        line-height: 5vmin;
+        line-height: 30px;
         font-size: 0.9rem;
         list-style: none;
         text-decoration: none;
-        color: rgb(0, 0, 0);
+        color: rgb(55, 55, 55);
         font-weight: 500;
     }
 
@@ -701,13 +699,72 @@
         color: black;
     }
 
+    #f-outer--most {
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        padding: 0 3.9vh;
+        margin-top: 40px;
+    }
+
+    .f--m-inr1 {
+        width: 80vw;
+    }
+
+    .f--m-inr2 {
+        display: flex;
+        width: 20%;
+        justify-content: end;
+    }
+
+    .f--m-inr2 a {
+        text-decoration: none;
+        list-style: none;
+        color: rgb(79, 79, 79);
+    }
+
+    #f-outer {
+        display: flex;
+        margin-top: 40px;
+    }
+
+    .f-outer-inr {
+        width: 50%;
+        text-align: center;
+    }
+
+    .f-outer-inr a {
+        display: block;
+        color: rgb(51, 51, 51);
+        text-decoration: none;
+        line-height: 2rem;
+        font-weight: 500;
+    }
+
     /* responsive */
 
     @media (max-width: 1280px) {}
 
-    @media (max-width:929px) {}
+    @media (max-width:929px) {
+        .f--m-inr1 {
+            width: 35vmax;
+        }
+    }
 
     @media (max-width:768px) {
+        #f-legal {
+            display: none;
+        }
+
+
+        .f--m-inr1 {
+            width: auto;
+        }
+
+        .f--m-inr2 {
+            width: 50vw;
+            margin: 0 5px;
+        }
 
         .f-1-o-inr:first-child {
             font-size: 1rem;
@@ -730,6 +787,7 @@
         .menu_1 p {
             display: none;
         }
+
 
         .section-4 {
             grid-template-columns: repeat(2, 1fr);
@@ -765,18 +823,27 @@
     }
 
     @media (max-width:480px) and (min-width:0px) {
-         .f-1-o-inr:first-child {
+        .f-outer-inr>p {
+            font-size: 0.9rem;
+        }
+        .f-outer-inr>a {
+            line-height: 5.2vmin;
+            font-size: 0.7rem;
+        }
+
+        .f-1-o-inr:first-child {
             font-size: 1rem;
         }
 
         .f-1-o-inr>a {
             line-height: 5.2vmin;
-
             font-size: 0.7rem;
         }
-        #f-outer-1{
+
+        #f-outer-1 {
             grid-template-columns: auto auto;
         }
+
         .s-9-boxes {
             grid-template-columns: auto;
         }
