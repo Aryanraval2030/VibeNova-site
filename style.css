@@ -632,8 +632,9 @@
         display: flex;
         flex-direction: column;
         justify-self: center;
-        height: 300px;
-        width: 300px;
+        height: 320px;
+        width: 30vmax;
+        padding-bottom: 30vh;
     }
 
     #s-9-text {
@@ -801,6 +802,7 @@
         .s-9-inr {
             height: 60vh;
             width: 70vw;
+                padding-bottom: 1vh;
         }
         footer{
             margin-top: 0;
