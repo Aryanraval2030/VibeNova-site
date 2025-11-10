@@ -5,6 +5,12 @@
         font-family: Louis Vuitton Web, Louis Vuitton Web Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
     }
 
+    .fa-heart {
+        float: right;
+        padding: 5px;
+        color: black;
+    }
+
     header {
         position: fixed;
         top: 0px;
@@ -802,9 +808,10 @@
         .s-9-inr {
             height: 60vh;
             width: 70vw;
-                padding-bottom: 1vh;
+            padding-bottom: 1vh;
         }
-        footer{
+
+        footer {
             margin-top: 0;
             padding-top: 0;
         }
