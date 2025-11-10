@@ -5,11 +5,6 @@
         font-family: Louis Vuitton Web, Louis Vuitton Web Fallback, Helvetica Neue, Helvetica, Arial, sans-serif;
     }
 
-    .fa-heart {
-        float: right;
-        padding: 5px;
-        color: black;
-    }
 
     header {
         position: fixed;
@@ -664,6 +659,12 @@
         background-size: cover;
     }
 
+    .fa-heart {
+        float: right;
+        padding: 5px;
+        color: black;
+    }
+
     #s-9-i-3 {
         background-image: url(https://ap.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/New-Homepage/2024/central/services/LV_ContactUs_WW_HP_Services_Push_20240425_DII.jpg?wid=490);
         background-position: center;
@@ -871,6 +872,13 @@
             scroll-behavior: smooth;
 
         }
+
+        .fa-heart {
+            float: right;
+            padding: 5px;
+            color: black;
+        }
+
     }
 
     @media (max-width:480px) and (min-width:0px) {
@@ -951,5 +959,7 @@
 
         .products_2 {
             grid-template-columns: repeat(2, 1fr);
+        }#heart{
+        display: block;
         }
     }
